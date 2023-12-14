@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        padding: 10px 0px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <ul>
+            <li><span id="Form1">Form_1</span></li>
+            <li><span id="Form2">Form_2</span></li>
+            <li><span id="Form3">Form_3</span></li>
+            <li><span id="Form4">Form_4</span></li>
+            <li><span id="Form5">Form_5</span></li>
+            <li><span id="Form6">Form_6</span></li>
+            <li><span id="Form7">Form_7</span></li>
+            <li><span id="Form8">Form_8</span></li>
+            <li><span id="Form9">Form_9</span></li>
+            <li><span id="Form10">Form_10</span></li>
+          </ul>
+        </div>
+        <div class="col-10 border border-black" id="cBody"></div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#Form1").on("click", function () {
+          $("#cBody").html("");
+          $.get("1Kayıt Sözleşmesi Arka Yüz.html", function (x) {
+            $("#cBody").html(x);
+          });
+        });
+        $("#Form2").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "2Müracaat Formu (Çizerek).html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form3").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "3K Belgesi Çizerek.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form4").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form5").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form6").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "6Direksiyon Takip Formları.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form7").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "7İmza ve Adres Beyanı.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form8").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "8Adli Sicil Beyanı.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form9").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "9Kayıp Sertifika Örneği.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+        $("#Form10").on("click", function () {
+          $("#cBody").html("");
+          $.ajax({
+            url: "10Ücretsiz Okuyan Kayıt Başvuru Formu Arka Yüz.html",
+            method: "GET",
+            dataType: "html",
+            success: function (data) {
+              $("#cBody").html(data);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
