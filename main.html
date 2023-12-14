@@ -29,7 +29,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-1 text-start">
           <ul>
             <li><span id="Form1">Form_1</span></li>
             <li><span id="Form2">Form_2</span></li>
@@ -43,17 +43,54 @@
             <li><span id="Form10">Form_10</span></li>
           </ul>
         </div>
-        <div class="col-10 border border-black" id="cBody"></div>
+        <div class="col-11 border border-black" id="cBody"></div>
       </div>
     </div>
 
     <script>
       $(document).ready(function () {
         $("#Form1").on("click", function () {
+          /*
           $("#cBody").html("");
-          $.get("1Kayıt Sözleşmesi Arka Yüz.html", function (x) {
+          $.get("1Kayıt Sözleşmesi ön Yüz.html", function (x) {
             $("#cBody").html(x);
           });
+          */
+          /*
+          fetch("1Kayıt Sözleşmesi ön Yüz.html")
+            .then((response) => response.text())
+            .then((data) => {
+              $("#cBody").html(data);
+            });
+
+          fetch("1Kayıt Sözleşmesi arka Yüz.html")
+            .then((response) => response.text())
+            .then((data) => {
+              $("#cBody").html(data);
+            });
+            */
+          $(document).ready(function () {
+            var clickCount = 0;
+
+            $("#Form1").on("click", function () {
+              clickCount++;
+
+              if (clickCount === 1) {
+                fetch("1Kayıt Sözleşmesi ön Yüz.html")
+                  .then((response) => response.text())
+                  .then((data) => {
+                    $("#cBody").html(data);
+                  });
+              } else if (clickCount === 2) {
+                fetch("1Kayıt Sözleşmesi arka Yüz.html")
+                  .then((response) => response.text())
+                  .then((data) => {
+                    $("#cBody").html(data);
+                  });
+              }
+            });
+          });
+          /*-------------------------------------------------------------------------*/
         });
         $("#Form2").on("click", function () {
           $("#cBody").html("");
@@ -88,15 +125,25 @@
             },
           });
         });
-        $("#Form5").on("click", function () {
-          $("#cBody").html("");
-          $.ajax({
-            url: "",
-            method: "GET",
-            dataType: "html",
-            success: function (data) {
-              $("#cBody").html(data);
-            },
+        $(document).ready(function () {
+          var clickCount = 0;
+
+          $("#Form5").on("click", function () {
+            clickCount++;
+
+            if (clickCount === 1) {
+              fetch("5-100 Ceza Eğitim Başvuru Formu.html")
+                .then((response) => response.text())
+                .then((data) => {
+                  $("#cBody").html(data);
+                });
+            } else if (clickCount === 2) {
+              fetch("5-100 Ceza Eğitim Başvuru Belgesi.html")
+                .then((response) => response.text())
+                .then((data) => {
+                  $("#cBody").html(data);
+                });
+            }
           });
         });
         $("#Form6").on("click", function () {
