@@ -70,11 +70,10 @@
             });
             */
           $(document).ready(function () {
-            var clickCount = 0;
+            let clickCount = 0;
 
             $("#Form1").on("click", function () {
               clickCount++;
-
               if (clickCount === 1) {
                 fetch("1Kayıt Sözleşmesi ön Yüz.html")
                   .then((response) => response.text())
@@ -84,8 +83,8 @@
               } else if (clickCount === 2) {
                 fetch("1Kayıt Sözleşmesi arka Yüz.html")
                   .then((response) => response.text())
-                  .then((data) => {
-                    $("#cBody").html(data);
+                  .then((xx) => {
+                    $("#cBody").html(xx);
                   });
               }
             });
@@ -140,8 +139,8 @@
             } else if (clickCount === 2) {
               fetch("5-100 Ceza Eğitim Başvuru Belgesi.html")
                 .then((response) => response.text())
-                .then((data) => {
-                  $("#cBody").html(data);
+                .then((xx) => {
+                  $("#cBody").html(xx);
                 });
             }
           });
@@ -189,7 +188,7 @@
               $("#cBody").html(data);
             },
           });
-        });
+        }); /*
         $("#Form10").on("click", function () {
           $("#cBody").html("");
           $.ajax({
@@ -200,6 +199,23 @@
               $("#cBody").html(data);
             },
           });
+        });
+        */
+        $("#Form10").on("click", function () {
+          clickCount++;
+          if (clickCount === 1) {
+            fetch("10 - Ücretsiz Okuyan Kayıt Başvuru Formu Ön Yüz.html")
+              .then((response) => response.text())
+              .then((data) => {
+                $("#cBody").html(data);
+              });
+          } else if (clickCount === 2) {
+            fetch("10Ücretsiz Okuyan Kayıt Başvuru Formu Arka Yüz.html")
+              .then((response) => response.text())
+              .then((xx) => {
+                $("#cBody").html(xx);
+              });
+          }
         });
       });
     </script>
